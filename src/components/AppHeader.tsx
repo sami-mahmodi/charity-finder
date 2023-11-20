@@ -13,7 +13,6 @@ export default function AppHeader() {
             <SearchCharity/>
             <div>
        <Link href='/favourites' className="text-xl p-2 bg-teal-100 hover:bg-teal-200 text-black rounded-md mx-2">  Favourites</Link>
-       <Link href='/about' className="text-xl p-2 bg-teal-100 hover:bg-teal-200 text-black rounded-md mx-2">  About</Link>
             </div>
           </div>
 
