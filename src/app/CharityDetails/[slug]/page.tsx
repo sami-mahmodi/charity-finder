@@ -6,7 +6,7 @@ export default function page({}: Props) {
   return (
     <div>
 
-      this page is dynamic
+    this page is dynamic
     </div>
   )
 }

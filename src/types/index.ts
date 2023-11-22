@@ -1,13 +1,17 @@
 
 
+
 export type CharityProps = {
+  id: string;
+  slug: string;
+  primarySlug: string;
   description: string;
   ein: string;
-  orgName: string;
+  name: string;
   profileUrl: string;
   logoUrl: string;
-  Url: string;
+  websiteUrl: string;
   coverImageUrl: string;
-  orgAddress: string;
-  tags: string[];
+  location: string;
+  locationAddress: string;
 }

@@ -1,28 +1,39 @@
 import Image from 'next/image';
 import { CharityProps } from '@/types';
 import Link from 'next/link';
-import neximage from '../../public/next.svg';
-import vercelimage from '../../public/vercel.svg';
 
-
-type CharityCardProps ={
+interface CharityCardProps {
   charity: CharityProps;
 }
 
-const CharityCard = ({charity}: CharityCardProps) => {
-  const { orgName, logoUrl, orgAddress, ein } = charity;
+const CharityCard = ({ charity }: CharityCardProps) => {
+  const { name, logoUrl, location, slug,locationAddress } = charity;
 
   return (
-    <Link href={`/favourites`}>
-      <div className='h-400 w-400 border border-black rounded-md bg-slate-200 p-4 shadow' >
-        <div className='p-2 rounded-md flex  items-center border-black border-b'>
-        <Image src={neximage} alt='this is next logo' height={40} width={40}/>
-        <h2 className='text-black mx-8'>NEXT ORGANIZATION</h2>
-        </div>
-      
-        <div className='flex  items-center'>
-          <Image src={vercelimage} alt='this is vercel image' height={40} width={40}/>
-          <h2 className='text-black text-xl bold mx-8'>This is Organization Logo</h2>
+    <Link href={`/charityDetail/${slug}`} passHref>
+      <div className="charity-card group">
+        <div className="charity-card__content">
+          <div className="logo-name-container">
+            <Image
+              src={logoUrl ? logoUrl : '/no-icon.png'}
+              alt={`${name} logo`}
+              width={50}
+              height={50}
+              className="rounded-full"
+            />
+            <h2 className="charity-card__content-title">{name}</h2>
+          </div>
+
+          <div className="location-container">
+            <Image src="/location.jpg" alt="location" width={20} height={20} />
+            <span className="location-text">
+              {location
+                ? location
+                : locationAddress
+                ? locationAddress
+                : 'Unknown Location'}
+            </span>
+          </div>
         </div>
       </div>
     </Link>

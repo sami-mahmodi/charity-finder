@@ -1,7 +1,7 @@
 'use client'
 import Image from 'next/image'
 import HomePageImage from '../../public/assets/images/undraw_undraw_undraw_undraw_undraw_search_engines_041x_-2-_cl95_o7o8_pigd_-1-_wbm3.svg';
-import CharityCard from '@/components/CharityCard';
+// import CharityCard from '@/components/CharityCard';
 import { fetchCharities } from '@/utils';
 import { useState,useEffect } from 'react';
 import SearchCharity from '@/components/SearchCharity';
@@ -20,7 +20,6 @@ export default function Home() {
   },[SearchCharity]);
 
   
-
   return (
     <main className="flex min-h-screen flex-col items-center justify-between ">
       <div className="z-10  w-full h-64   justify-between font-mono text-sm lg:flex p-8">
